@@ -31,9 +31,27 @@ function startTrailing() {
             new ol.Feature(accuracy.transform('EPSG:4326', map.getView().getProjection())),
             new ol.Feature(new ol.geom.Point(ol.proj.fromLonLat(coords)))
         ]);
+
+        
     }, function (error) {
         alert(`ERROR: ${error.message}`);
     }, {
         enableHighAccuracy: false
     });
+
+    // Locate button on map
+    const locate = document.createElement('div');
+    locate.className = 'ol-control ol-unselectable locate';
+    locate.innerHTML = '<button id="locate" title="Locate me">◎</button>';
+    locate.addEventListener('click', function () {
+        if (!source.isEmpty()) {
+            map.getView().fit(source.getExtent(), {
+                maxZoom: 16,
+                duration: 500
+            });
+        }
+    });
+    map.addControl(new ol.control.Control({
+        element: locate
+    }));
 }
