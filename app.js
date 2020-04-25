@@ -34,7 +34,10 @@ function startTrailing() {
 
         
     }, function (error) {
-        alert(`ERROR: ${error.message}`);
+        const div = document.createElement('div');
+        div.className = 'alert alert-danger mt-3';
+        div.innerHTML = `ERROR: ${error.message} Please refresh and start again.`;
+        document.querySelector('.card-body').append(document.querySelector('.map-container'), div);
     }, {
         enableHighAccuracy: false
     });
