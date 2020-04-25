@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- 
+    Created By: Shubham Pal
+    Github: https://github.com/shubham-pal
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
         .map-container {
             height: 300px;
@@ -32,14 +34,18 @@
                     <div class="card-header">
                         <h3 class="float-left">Location Trail Generator</h3>
                         <div id="actions" class="float-right">
-                            <button id="start" class="btn btn-primary btn-sm ">Start Trailing</button>
+                            <button id="start" class="btn btn-primary btn-sm">Start Generation</button>
+                            <a href="https://github.com/shubham-pal/location-trail-generator" class="btn btn-dark btn-sm"><i class="fa fa-github"></i> Github Repo</a>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="map-container" id="map-container"></div>
                     </div>
                     <div class="card-footer">
-                        <span class="footer-text">Click on Start button to start generation of trail.</span>
+                        <span class="footer-text">
+                            Click on Start button to start generation of location trail.
+                        </span>
+
                     </div>
                 </div>
             </div>
