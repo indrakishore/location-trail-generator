@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
+    <style>
+        .map-container {
+            height: 300px;
+            width: 100%;
+            font-family: sans-serif;
+        }
+
+        .locate {
+            top: 6em;
+            left: .5em;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
     <title>Location Trail Generator</title>
 </head>
+
 <body class="bg-dark">
     <div class="container pt-5">
         <div class="row">
@@ -17,7 +35,9 @@
                             <button id="start" class="btn btn-primary btn-sm ">Start Trailing</button>
                         </div>
                     </div>
-                    <div class="card-body"></div>
+                    <div class="card-body">
+                        <div class="map-container" id="map-container"></div>
+                    </div>
                     <div class="card-footer">
                         <span class="text-sm">Click on Start button to start generation of trail.</span>
                     </div>
@@ -25,7 +45,8 @@
             </div>
         </div>
     </div>
-    
+
     <script src="app.js"></script>
 </body>
+
 </html>
