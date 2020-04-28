@@ -1,20 +1,20 @@
+<!-- 
+    
+-->
 <!DOCTYPE html>
 <html lang="en">
-<!-- 
-    Created By: Shubham Pal
-    Github: https://github.com/shubham-pal
--->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Css Framework from Bootstrap-->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
         .map-container {
-            height: 300px;
+            height: 310px;
             width: 100%;
-            font-family: sans-serif;
+            font-family:Arial, Helvetica, sans-serif;
         }
 
         .locate {
@@ -23,7 +23,7 @@
         }
     </style>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
-    <title>Location Trail Generator</title>
+    <title>Location Trail of a Device</title>
 </head>
 
 <body class="bg-dark">
@@ -32,10 +32,10 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="float-left">Location Trail Generator</h3>
+                        <h3 class="float-left">Location Trail Of a Device</h3>
                         <div id="actions" class="float-right">
-                            <button id="start" class="btn btn-primary btn-sm">Start Generation</button>
-                            <a href="https://github.com/shubham-pal/location-trail-generator" class="btn btn-dark btn-sm"><i class="fa fa-github"></i> Github Repo</a>
+                            <button id="start" class="btn btn-primary btn-sm">Start Trial</button>
+                            <a href="https://github.com/indrakishore/Python-for-Beginers" class="btn btn-dark btn-sm"><i class="fa fa-github"></i> Github Repo</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -43,7 +43,8 @@
                     </div>
                     <div class="card-footer">
                         <span class="footer-text">
-                            Click on Start button to start generation of location trail.
+                            Click on Start trial button to retrieve location
+                            and click on button + for Zoom in and - for zoom out.
                         </span>
 
                     </div>
