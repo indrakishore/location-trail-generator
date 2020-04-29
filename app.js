@@ -30,34 +30,34 @@ function startTrailing() {
         navigator.geolocation.watchPosition(function (pos) {
             const coords = [pos.coords.longitude, pos.coords.latitude];
             const accuracy = new ol.geom.Polygon(coords, pos.coords.accuracy);
-    
-            // adding location trail
-            const div = document.createElement('div');
-            div.className = 'alert alert-info';
-            div.innerHTML = `<strong>Latitude:</strong> ${pos.coords.latitude} <strong>Longitude:</strong> ${pos.coords.longitude} <strong>Date/Time:</strong> ${Date()}`;
-            document.querySelector('.card-footer').insertBefore(div, document.querySelector('.alert'));
-    
             source.clear(true);
             source.addFeatures([
                 new ol.Feature(accuracy.transform('EPSG:4326', map.getView().getProjection())),
                 new ol.Feature(new ol.geom.Point(ol.proj.fromLonLat(coords)))
             ]);
-    
+            
+            // Zooming to the current location
             if (!source.isEmpty()) {
                 map.getView().fit(source.getExtent(), {
                     maxZoom: 16,
                     duration: 500
                 });
             }
+    
+            // adding location trail
+            const div = document.createElement('div');
+            div.className = 'alert alert-info';
+            div.innerHTML = `<strong>Latitude:</strong> ${pos.coords.latitude} <strong>Longitude:</strong> ${pos.coords.longitude} <strong>Date/Time:</strong> ${Date()}`;
+            document.querySelector('.card-footer').insertBefore(div, document.querySelector('.alert'));
             
         }, function (error) {
             const div = document.createElement('div');
             div.className = 'alert alert-danger mt-3';
-            div.innerHTML = `ERROR: ${error.message} Please refresh and start again.`;
+            div.innerHTML = `ERROR: ${error.message}. Please refresh and start again.`;
             document.querySelector('.card-body').append(document.querySelector('.map-container'), div);
         }, {
             enableHighAccuracy: true,
-            maximumAge: 10000
+            maximumAge: 1000
         });
     
         // Locate button on map
