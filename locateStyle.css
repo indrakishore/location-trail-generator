@@ -1,0 +1,53 @@
+body{
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+/* #card{
+    background-color: rgb(231, 225, 225);
+    display: flex ;
+    flex-direction: column;
+    text-align: center;
+    padding: 2em 0;
+    border: 1px solid grey;
+    box-shadow: 0 0.7em 0.7em rgb(43, 42, 42);
+    margin: 1.2em;
+    max-height: auto;
+    min-height: 80vh;
+}
+#card-header{
+    font-size: 0.7em;
+    padding: 2em 0;
+}
+.map-container{
+    width: 100%;
+    height: 300px;
+    font-family: sans-serif;
+    margin-bottom: 2em;
+}
+#actions button{
+    width: 35%;
+    color: white;
+    margin: 1.2em 1em 0 1em;
+    font-size: 1.4em;
+    border-radius: 7px;
+    background-color: rgb(69, 107, 89);
+    padding:0.6em;
+}
+.locate{
+   top: 6em;
+   left: 0.5em;
+}
+@media (min-width:600px)
+{
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    #card{
+        width:50%;
+        min-width: 35em;
+        align-self: center;
+    }
+} */
