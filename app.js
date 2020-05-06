@@ -10,7 +10,7 @@ const startBtn = document.getElementById('start').addEventListener('click', star
 
 function startTrailing() {
  // removing footer text
-    document.querySelector('.footer-text')..innerHTML = `<h3>Location Trails: </h3>`;
+    document.querySelector('.footer-text').innerHTML = `<h3>Location Trails: </h3>`;
 
    if (navigator.geolocation) {
         navigator.geolocation.watchPosition((pos) => {
