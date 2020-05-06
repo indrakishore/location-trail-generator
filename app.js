@@ -9,9 +9,7 @@ const startBtn = document.getElementById('start').addEventListener('click', star
 
 
 function startTrailing() {
-    map.addLayer(layer);
-
-    // removing footer text
+ // removing footer text
     document.querySelector('.footer-text').remove();
 
    if (navigator.geolocation) {
