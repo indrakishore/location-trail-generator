@@ -13,20 +13,21 @@ startBtn.addEventListener('click', startTrailing);
 // Event to stop trail generation
 stopBtn.addEventListener('click', stopTrailing);
 
+const gl = navigator.geolocation;
 let watchID;
 
 function startTrailing() {
-
-    if (navigator.geolocation) {
+    if (gl) {
         // changing footer text
         document.querySelector('.footer-text').innerHTML = `<h3>Location Trails: </h3>`;
         // Changing button colors
         startBtn.className = 'btn btn-success btn-sm';
         stopBtn.className = 'btn btn-warning btn-sm';
 
-        showMessage(`<strong>Trail generation started.  Date/Time:</strong> ${Date()}`, 'success');
+        showMessage(`<strong>Trail generation started at</strong> ${Date()}`, 'success');
 
-        watchID = navigator.geolocation.watchPosition(successCallback, errorCallback, {desiredAccuracy:20, maxWait:15000});
+        watchID = gl.watchPosition(successCallback, errorCallback, {enableHighAccuracy:true});
+
     } else {
         alert('Geolocation is not supported in this browser.');
     }
@@ -38,21 +39,16 @@ function successCallback(pos) {
     
     // Zooming to the current location
     map.setView(coords, 15);
-
     // Marker to the current position
     L.marker(coords).addTo(map)
         .bindPopup(`<b>Current Location: </b> ${coords}`).openPopup();
-
     // adding location trail
-    showMessage(`<strong>Accuracy:</strong> ${pos.coords.accuracy}  <strong>Latitude:</strong> ${pos.coords.latitude} <strong>Longitude:</strong> ${pos.coords.longitude} <strong>Date/Time:</strong> ${Date()}`, 'dark');
+    showMessage(`<strong>Latitude:</strong> ${pos.coords.latitude} <strong>Longitude:</strong> ${pos.coords.longitude} <strong>Date/Time:</strong> ${Date()}`, 'dark');
     
 }
 
 function errorCallback(err) {
-    const div = document.createElement('div');
-    div.className = 'alert alert-danger mt-3';
-    div.innerHTML = `ERROR: ${err.message}. Please refresh and start again.`;
-    document.querySelector('.card-body').append(document.querySelector('.map-container'), div);
+    showMessage(`ERROR: ${err.message}. Please refresh and start again.`, 'danger');
 }
 
 function stopTrailing() {
@@ -61,12 +57,12 @@ function stopTrailing() {
     stopBtn.className = 'btn btn-danger btn-sm';
     navigator.geolocation.clearWatch(watchID);
 
-    showMessage(`<strong>Trail generation stopped.  Date/Time:</strong> ${Date()}`, 'danger');
+    showMessage(`<strong>Trail generation stopped at</strong> ${Date()}`, 'warning');
 }
 
-function showMessage(msg, msgClass) {
+function showMessage(msg, msgClass = 'info') {
     const div = document.createElement('div');
-    div.className = `badge badge-${msgClass}`;
-    div.innerHTML = msg;
-    document.querySelector('.card-footer').insertBefore(div, document.querySelector('.badge'));
+    div.className = `alert alert-${msgClass} text-xl`;
+    div.innerHTML = '>> ' + msg;
+    document.querySelector('.card-footer').insertBefore(div, document.querySelector('.alert'));
 }
