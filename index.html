@@ -15,29 +15,45 @@
     crossorigin=""></script>
     <style>
         .map-container {
-            height: 300px;
+            height: 50vh;
         }
+        
+        .addScroll{
+            overflow-y:auto;
+            height: 38vh;
+        }
+
+        @media screen and (min-width: 760px) {
+            .map-container {
+                height: 100vh;
+            }
+            .addScroll {
+                overflow-y: auto;
+                height: 85vh;
+            }
+        }
+        
     </style>
     <title>Location Trail Generator</title>
 </head>
 
 <body class="bg-dark">
-    <div class="container pt-5">
+    <div class="">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="map-container" id="map-container"></div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="float-left">Location Trail Generator</h3>
-                        <div id="actions" class="float-right">
+                        <h4>Location Trail Generator</h4>
+                        <div id="actions">
                             <button id="start" class="btn btn-primary btn-sm">Start</button>
                             <button id="stop" class="btn btn-warning btn-sm">Stop</button>
                             <a href="https://github.com/shubham-pal/location-trail-generator" class="btn btn-dark btn-sm" target="_blank"><i class="fa fa-github"></i> Github Repo</a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="map-container" id="map-container"></div>
-                    </div>
-                    <div class="card-footer bg-dark text-white">
+                    <div class="card-footer bg-dark text-white addScroll">
                         <div class="footer-text">
                             Click on Start button to start generation of location trail.
                         </div>
@@ -46,7 +62,6 @@
             </div>
         </div>
     </div>
-
     <script src="js/app.js"></script>
 </body>
 

@@ -24,7 +24,7 @@ function startTrailing() {
         startBtn.className = 'btn btn-success btn-sm';
         stopBtn.className = 'btn btn-warning btn-sm';
 
-        showMessage(`<strong>Trail generation started at</strong> ${Date()}`, 'success');
+        showMessage(`<strong>Trail generation started at</strong> ${Date()}`, 'bg-success');
 
         watchID = gl.watchPosition(successCallback, errorCallback, {enableHighAccuracy:true});
 
@@ -43,12 +43,12 @@ function successCallback(pos) {
     L.marker(coords).addTo(map)
         .bindPopup(`<b>Current Location: </b> ${coords}`).openPopup();
     // adding location trail
-    showMessage(`<strong>Latitude:</strong> ${pos.coords.latitude} <strong>Longitude:</strong> ${pos.coords.longitude} <strong>Date/Time:</strong> ${Date()}`, 'dark');
+    showMessage(`<strong>Latitude:</strong> ${pos.coords.latitude} <strong>Longitude:</strong> ${pos.coords.longitude} <strong>Date/Time:</strong> ${Date()}`);
     
 }
 
 function errorCallback(err) {
-    showMessage(`ERROR: ${err.message}. Please refresh and start again.`, 'danger');
+    showMessage(`ERROR: ${err.message}. Please refresh and start again.`, 'bg-danger');
 }
 
 function stopTrailing() {
@@ -57,12 +57,12 @@ function stopTrailing() {
     stopBtn.className = 'btn btn-danger btn-sm';
     navigator.geolocation.clearWatch(watchID);
 
-    showMessage(`<strong>Trail generation stopped at</strong> ${Date()}`, 'warning');
+    showMessage(`<strong>Trail generation stopped at</strong> ${Date()}`, 'bg-warning');
 }
 
-function showMessage(msg, msgClass = 'info') {
+function showMessage(msg, msgClass) {
     const div = document.createElement('div');
-    div.className = `alert alert-${msgClass} text-xl`;
+    div.className = `alert ${msgClass} text-xl`;
     div.innerHTML = '>> ' + msg;
     document.querySelector('.card-footer').insertBefore(div, document.querySelector('.alert'));
 }
