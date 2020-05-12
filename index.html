@@ -14,7 +14,7 @@
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
     <style>
-        .map-container {
+        .map {
             height: 50vh;
         }
         
@@ -24,7 +24,7 @@
         }
 
         @media screen and (min-width: 760px) {
-            .map-container {
+            .map {
                 height: 100vh;
             }
             .addScroll {
@@ -41,16 +41,16 @@
     <div class="">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12">
-                <div class="map-container" id="map-container"></div>
+                <div class="map" id="map"></div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <h4>Location Trail Generator</h4>
                         <div id="actions">
-                            <button id="start" class="btn btn-primary btn-sm">Start</button>
-                            <button id="stop" class="btn btn-warning btn-sm">Stop</button>
-                            <a href="https://github.com/shubham-pal/location-trail-generator" class="btn btn-dark btn-sm" target="_blank"><i class="fa fa-github"></i> Github Repo</a>
+                            <button id="start" class="btn btn-primary btn-sm"><i class="fa fa-play"></i> Start</button>
+                            <button id="stop" class="btn btn-warning btn-sm"><i class="fa fa-stop"></i> Stop</button>
+                            <a href="https://github.com/shubham-pal/location-trail-generator" target="_blank" class="btn btn-dark btn-sm"><i class="fa fa-github"></i> Github Repo</a>
                         </div>
                     </div>
                     <div class="card-footer bg-dark text-white addScroll">
@@ -62,6 +62,7 @@
             </div>
         </div>
     </div>
+
     <script src="js/app.js"></script>
 </body>
 
