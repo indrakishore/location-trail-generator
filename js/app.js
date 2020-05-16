@@ -7,14 +7,22 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Buttons
 const startBtn = document.getElementById('start');
 const stopBtn = document.getElementById('stop');
+const btBtn = document.getElementById('startbt');
 
 // Event to start trail generation
 startBtn.addEventListener('click', startTrailing);
 // Event to stop trail generation
 stopBtn.addEventListener('click', stopTrailing);
+// Event to start bluetooth
+btBtn.addEventListener('click', () => {
+        let device = await navigator.bluetooth.requestDevice()
+            .then(dev => dev.gett.connect());
+        showMessage(device, 'alert-info');
+});
 
 const gl = navigator.geolocation;
 let watchID;
+let device;
 
 function startTrailing() {
     if (gl) {
