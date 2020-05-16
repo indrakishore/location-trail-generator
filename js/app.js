@@ -15,15 +15,13 @@ startBtn.addEventListener('click', startTrailing);
 stopBtn.addEventListener('click', stopTrailing);
 // Event to start bluetooth
 btBtn.addEventListener('click', () => {
-        let device = await navigator.bluetooth.requestDevice()
-            .then(dev => dev.gett.connect());
-        showMessage(device, 'alert-info');
+        // let device = await navigator.bluetooth.requestDevice()
+        //     .then(dev => dev.gett.connect());
+        // showMessage(device, 'alert-info');
 });
 
 const gl = navigator.geolocation;
 let watchID;
-let device;
-
 function startTrailing() {
     if (gl) {
         // changing footer text
