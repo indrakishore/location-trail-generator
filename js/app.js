@@ -13,12 +13,6 @@ const btBtn = document.getElementById('startbt');
 startBtn.addEventListener('click', startTrailing);
 // Event to stop trail generation
 stopBtn.addEventListener('click', stopTrailing);
-// Event to start bluetooth
-btBtn.addEventListener('click', () => {
-        // let device = await navigator.bluetooth.requestDevice()
-        //     .then(dev => dev.gett.connect());
-        // showMessage(device, 'alert-info');
-});
 
 const gl = navigator.geolocation;
 let watchID;
@@ -70,5 +64,5 @@ function showMessage(msg, msgClass) {
     const div = document.createElement('div');
     div.className = `alert ${msgClass} text-xl`;
     div.innerHTML = '>> ' + msg;
-    document.querySelector('.card-footer').insertBefore(div, document.querySelector('.alert'));
+    document.querySelector('.card-footer').insertBefore(div, document.querySelector('.text-xl'));
 }
