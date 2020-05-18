@@ -10,8 +10,8 @@ function startBluetooth() {
             blLog.className = 'alert alert-info';
             blLog.innerHTML = `
                 <strong>Name: </strong>${device.name}<br>
-                <strong>Name: </strong>${device.id}<br>
-                <strong>Name: </strong>${device.gatt.connected}<br>
+                <strong>Device ID: </strong>${device.id}<br>
+                <strong>Connected: </strong>${device.gatt.connected}<br>
                 `;
         })
         .catch(error => {
