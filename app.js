@@ -6,6 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 //Adding Button to start trail
 const startBtn = document.getElementById('start').addEventListener('click', startTrailing);
+const btBtn = document.getElementById('startbt');
 
 
 function startTrailing() {
